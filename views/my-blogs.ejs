@@ -1,0 +1,30 @@
+<%- include('partials/header.ejs') %>
+
+<div class="my-blogs-container">
+  <h1 class="my-blogs-title">My Notes</h1>
+  
+  <% if (blogs.length === 0) { %>
+    <p class="no-notes-message">No notes yet.</p>
+  <% } else { %>
+    <div class="blogs-grid">
+      <% blogs.forEach(blog => { %>
+        <div class="blog-box" onclick="window.location='/blogs/<%= blog.id %>'">
+          <h2 class="blog-title"><%= blog.title.substring(0, 20) + (blog.title.length > 20 ? '...' : '') %></h2>
+          <p class="blog-preview"><%= blog.content.substring(0, 100) + (blog.content.length > 100 ? '...' : '') %></p>
+          <div class="blog-actions">
+            <a href="/blogs/<%= blog.id %>" class="btn custom-btn">View</a>
+            <a href="/blogs/<%= blog.id %>/edit" class="btn custom-btn">Edit</a>
+            <form action="/blogs/<%= blog.id %>/delete" method="POST">
+              <button type="submit" class="btn custom-btn">Delete</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+
+

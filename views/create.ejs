@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+
+<div class="create-container">
+  <h1 class="create-blog-title">New Note</h1>
+  <div class="form-container">
+    <form action="/create" method="POST">
+      <input type="text" id="title" name="title" class="form-control" placeholder="Title" required>
+      <textarea id="content" name="content" class="form-control" placeholder="Content" rows="6"></textarea>
+      <button type="submit" class="btn custom-btn">Create</button>
+      <button type="button" class="btn custom-btn discard-btn" onclick="location.href='/my-blogs'">Discard</button>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>
+

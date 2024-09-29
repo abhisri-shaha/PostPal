@@ -1,0 +1,17 @@
+<%- include('partials/header.ejs') %>
+
+<div class="edit-container">
+  <h1 class="edit-blog-title">Edit Note</h1>
+  <div class="form-container">
+    <form action="/blogs/<%= blog.id %>/edit" method="POST">
+      <input type="text" id="title" name="title" class="form-control" value="<%= blog.title %>" required>
+      <textarea id="content" name="content" class="form-control" rows="6"><%= blog.content %></textarea>
+      <a href="/my-blogs" class="btn custom-btn"><< Back</a>
+      <button type="submit" class="btn custom-btn">Save</button>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+

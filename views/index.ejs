@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+<div class="home-container">
+  <div class="image-container">
+    <img src="images/blogging-girl.webp" class="img-fluid rounded-3" alt="girl blogging on laptop" width="700" height="500" loading="lazy">
+  </div>
+  <div class="text-container">
+    <img src="/images/postpal-logo.png" alt="PostPal Logo" class="logo" height="200" width="200">
+    <h1 class="title">PostPal</h1>
+    <p class="catchphrase">your digital note-taking partner, always eager to lend an ear ♡</p>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var logo = document.querySelector('.header-logo');
+    if (window.location.pathname === '/') {
+      logo.classList.add('hidden');
+    } else {
+      logo.classList.remove('hidden');
+    }
+  });
+</script>
+
